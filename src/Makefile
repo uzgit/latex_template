@@ -5,6 +5,7 @@
 # Change only the variable below to the name of the main tex file.
 PROJNAME=main
 OUTPUT_DIRECTORY=../out
+OUTPUT_NAME=out
 
 # You want latexmk to *always* run, because make does not have all the info.
 # Also, include non-file targets in .PHONY so they are run regardless of any
@@ -39,6 +40,7 @@ all: $(PROJNAME).pdf
 
 $(PROJNAME).pdf: $(PROJNAME).tex
 	latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make -output-directory="$(OUTPUT_DIRECTORY)" -aux-directory="$(OUTPUT_DIRECTORY)" $<
+	mv $(OUTPUT_DIRECTORY)/$(PROJNAME).pdf $(OUTPUT_DIRECTORY)/$(OUTPUT_NAME).pdf
 
 cleanall:
 	latexmk -C
