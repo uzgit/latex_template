@@ -52,9 +52,9 @@
 \newcommand{\mypause}{\ifpause \pause \fi}
 
 %Information to be included in the title page:
-\title{TITLE}
-\author{AUTHOR}
-\institute{INSTITUTION\\DEPARTMENT}
+\title{Autonomous Drone Landing with Fiducial Markers\\and a Gimbal-Mounted Camera for Active Tracking}
+\author{Joshua Springer}
+\institute{Reykjavik University\\Department of Computer Science}
 
 \date{\specialdate\today}
 
@@ -62,14 +62,85 @@
 
 \maketitle
 
-\begin{frame}{Overview}
+\begin{frame}{Fiducial Markers}
+	\vspace*{\fill}
+	\begin{figure}[]
+	    \centering
+	    \begin{subfigure}[b]{0.2\linewidth}
+		\includegraphics[width=\textwidth]{./images/tagCustom48h12_00002_00001_00000}
+		\caption{April Tag 48h12}
+		\label{figure:apriltag48h12}
+	    \end{subfigure}
+		\hspace{0.05\linewidth}
+	    \begin{subfigure}[b]{0.2\linewidth}
+		\includegraphics[width=\textwidth]{./images/tagCustom24h10_00002_00001_00000}
+		\caption{April Tag 24h10}
+		\label{figure:apriltag24h10}
+	    \end{subfigure}
+		\hspace{0.05\linewidth}
+	    \begin{subfigure}[b]{0.2\linewidth}
+		\includegraphics[width=\textwidth]{./images/whycode_20_8}
+		\caption{WhyCode (Orig)}
+		\label{figure:whycode_single}
+	    \end{subfigure}
+		\hspace{0.05\linewidth}
+	    \begin{subfigure}[b]{0.2\linewidth}
+		\includegraphics[width=\textwidth]{./images/whycode_multi}
+		\caption{WhyCode Multi}
+		\label{figure:whycode_bundle}
+	    \end{subfigure}
+	    \label{figure:marker_setup}
+	\end{figure}
+	\vspace*{\fill}
+\end{frame}
+
+\begin{frame}{The Downward-facing Camera Axiom}
+\end{frame}
+
+\begin{frame}{Orientation Ambiguity}
+\end{frame}
+
+\begin{frame}{Testing Platform: DJI Spark}
+	DJI Mobile SDK
+\end{frame}
+
+\begin{frame}{Testing Platform Limitations/Workarounds}
+\end{frame}
+
+\begin{frame}{Example Tracking Performance}
+\end{frame}
+
+\begin{frame}{Example Landing Trajectory}
+\end{frame}
+
+\begin{frame}{Example Control Outputs}
+\end{frame}
+
+\begin{frame}{Erroneous Control Outputs}
+\end{frame}
+
+\begin{frame}{Erroneous Landing Trajectory}
+\end{frame}
+
+\begin{frame}{Landing Radii}
+\end{frame}
+
+\begin{frame}{Future Work}
+\end{frame}
+
+\begin{frame}{Main Messages}
 	\begin{itemize}
-		\item Point 1
-		\mypause
-		\item Point 2
-		\mypause
-		\item Point 3
+		\item \emph{Actuated}, gimbal-mounted camera
+			\mypause $\rightarrow$ easier to search for the landing pad.
+		\mypause\item Orientation ambiguity, discontinuities
+			\mypause $\rightarrow$ pose estimation is harder.
+		\mypause\item Autonomous precision landing still possible
+			\mypause but can be improved.
 	\end{itemize}
 \end{frame}
+
+
+%\begin{frame}{}
+%\end{frame}
 
 \end{document}
