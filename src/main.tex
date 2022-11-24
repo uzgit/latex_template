@@ -1,27 +1,75 @@
-% Preamble
-\documentclass[11pt]{article}
-
-% Packages
-\usepackage[top=2.54cm, bottom=2.54cm, right=2.54cm, left=2.54cm]{geometry}
+\documentclass[aspectratio=169]{beamer}
+ 
+\usepackage[utf8]{inputenc}
 \usepackage{lipsum}
-\usepackage{graphicx}
-\usepackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set Helvetica Font in Text and Math in LaTeX %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[helvet]{sfmath}
+\usepackage[scaled=1]{helvet}
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault} 
+\everymath={\sf}
+\usepackage{fontspec}
+
+\usepackage{subcaption}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+%    pdfpagemode=FullScreen,
+}
+
+% use settings files
+\input{configuration_files/beamer_theme.tex}
+\input{configuration_files/quotations.tex}
+
+% Other packages
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+
+\usepackage{amssymb}
+\newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}
+
 \usepackage{datetime}
 \newdateformat{specialdate}{\twodigit{\THEDAY} \ \monthname[\THEMONTH] \THEYEAR}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[pdfusetitle]{hyperref}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
+\newcommand{\yeslogo}{\logo{\vspace{-0.5cm}\includegraphics[width=1.5cm]{./images/HR_logo_hringur_lowres}\hspace{0.5cm}}}
 
+\yeslogo
+
+\newif\ifpause
+\pausetrue
+%\pausefalse
+\newcommand{\mypause}{\ifpause \pause \fi}
+
+%Information to be included in the title page:
+\title{TITLE}
 \author{AUTHOR}
-\title{TEMPLATE}
+\institute{INSTITUTION\\DEPARTMENT}
+
 \date{\specialdate\today}
 
 \begin{document}
-    \maketitle
 
-    \section{Introduction}
-    \input{sections/introduction.tex}
+\maketitle
 
-    \bibliography{references}
-    \bibliographystyle{plain}
+\begin{frame}{Overview}
+	\begin{itemize}
+		\item Point 1
+		\mypause
+		\item Point 2
+		\mypause
+		\item Point 3
+	\end{itemize}
+\end{frame}
 
 \end{document}
